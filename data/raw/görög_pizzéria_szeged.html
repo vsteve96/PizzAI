@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="Igazi görögös ízek, Szeged egyik legrégebbi pizzériájában" />
+	<meta name="author" content="Codemakers Kft." />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="msapplication-tap-highlight" content="no" />
+
+	<title>Igazi görögös ízek, Szeged egyik legrégebbi pizzériájában</title>
+
+	<base href="https://gorogpizzeria.hu/">
+
+	<link rel="icon" type="image/png" href="../images/favicon.ico" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/leaflet.css" />
+	<link rel="stylesheet" href="css/site.css?1744270798" />
+	<link rel="stylesheet" href="css/webshop.css?1728478819" />
+	<link rel="stylesheet" href="css/mobil.css?1744270944" />
+	<link rel="stylesheet" href="css/page-colors.css?1725444021" />
+	<link rel="stylesheet" href="css/navbar.css?1725444021" />
+	<link rel="stylesheet" href="css/blog.css?1725444020" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<link rel="stylesheet" href="css/slick.css" />
+	<link rel="stylesheet" href="css/slick-theme.css" />
+
+	
+
+	<!-- JS -->
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<script src="js/bootstrap/bootstrap.bundle.js"></script>
+	<script src="js/site.js?1744270614"></script>
+	<script src="js/webshop.js?1744270614"></script>
+	<script src="js/slick.js"></script>
+	<script>
+		jQuery.noConflict();
+	</script>
+	<script language="javascript" type="text/javascript" src="js/mootools-core-1.4.0-full-compat-yc.js?1741254048"></script>
+	<script language="javascript" type="text/javascript" src="js/mootools-more-1.4.0.1.js?1741254048"></script>
+	<script>
+	var globalminprice=parseInt(1000);
+	var globalmenuminprice=parseInt(0);
+	var globalCart=[];
+	if( getCookie("globalCart") != '' )
+		{
+			globalCart=getCookie("globalCart");
+		}
+	var globalMenu=0;
+	if( getCookie("globalMenu") > 0 )
+		{
+			globalMenu=parseInt(getCookie("globalMenu"));
+		}
+window.addEvent('domready', function() {
+	checkCart('checkQuantity');
+});
+</script>
+</head>
+<body class="" data-spy="scroll" data-target="#navbarSupportedContent" data-offset="200">
+<div id="alertmessage" class="alertmessage"></div>
+<div id="popup" class="popup"><div class="popupclose" onclick="popupCartClose();" title="Bezárás">X</div><div id="popupmain" class="popupmain"></div></div>
+<div id="pagelock"><img width="150px" src="../images/favicon.ico"></div>	<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+    <div class="container p-0" style="max-width: 1300px">
+        <!-- Navbar: Brand -->
+        <a class="navbar-brand font-weight-bold text-main-blue brandname-style mr-2" href="/" title="Görög Pizzéria Szeged">
+            <img src="/images/logo.png?1725444043" alt="Görög Pizzéria Szeged" class="img-fluid" style="max-height: 64px;">
+        </a>
+
+        <!-- Navbar: Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar: Collapse -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <!-- Navbar navigation: Left -->
+            <ul class="navbar-nav mr-auto d-flex align-items-center">
+                <li class="nav-item dropdown custom-dropdown text-main-blue py-0">
+                    <a class="nav-link font-weight-bold" href="#" id="productDropdown">
+                        Termék kategóriák <i class="fa fa-caret-down d-none d-lg-inline"></i>
+                    </a>
+                    <div class="dropdown-menu custom-dropdown-menu" aria-labelledby="productDropdown" style="top: 34px;">
+                        <a class="dropdown-item text-main-blue" href="/?id=1&type=subgroup&#subgroup">Frissensültek</a><a class="dropdown-item text-main-blue" href="/?id=2&type=subgroup&#subgroup">Húsmentes pizzák</a><a class="dropdown-item text-main-blue" href="/?id=3&type=subgroup&#subgroup">Pizzák</a><a class="dropdown-item text-main-blue" href="/?id=4&type=subgroup&#subgroup">Saláták</a><a class="dropdown-item text-main-blue" href="/?id=14&type=subgroup&#subgroup">Tészták</a><a class="dropdown-item text-main-blue" href="/?id=5&type=subgroup&#subgroup">Leves</a><a class="dropdown-item text-main-blue" href="/?id=6&type=subgroup&#subgroup">Köretek</a><a class="dropdown-item text-main-blue" href="/?id=8&type=subgroup&#subgroup">Gyerek menü</a><a class="dropdown-item text-main-blue" href="/?id=9&type=subgroup&#subgroup">Desszertek</a><a class="dropdown-item text-main-blue" href="/?id=10&type=subgroup&#subgroup">Hamburgerek</a><a class="dropdown-item text-main-blue" href="/?id=13&type=subgroup&#subgroup">Szószok, Öntetek, étel kiegészítők</a><a class="dropdown-item text-main-blue" href="/?id=7&type=subgroup&#subgroup">Italok</a>                    </div>
+                </li>
+                <li class="nav-item py-0">
+                    <a class="nav-link text-main-blue font-weight-bold mx-0 mx-xl-3" href="/#rolunk">Rólunk</a>
+                </li>
+                <li class="nav-item py-0">
+                    <a class="nav-link text-main-blue font-weight-bold mx-0 mx-xl-3" href="#contact">Elérhetőség</a>
+                </li>
+                <li class="nav-item py-0 cartdata" onclick="popupCart('<h1>Kosár tartalma</h1>');">
+                    <a class="nav-link font-weight-bold mx-0 mx-xl-3 cursor-pointer nav-cart-parent" target="">
+                        <i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;
+                        <p class="d-inline"><span class="cart text-light rounded py-1 px-2" id="cart">&nbsp;</span></p>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Navbar navigation: Right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link text-main-blue font-weight-bold px-0 px-xl-2 py-1 mx-2" href="callto:+36702802822"><i class="fa fa-phone"></i> +36 70 280 2822</a><a class="nav-link text-main-blue font-weight-bold px-0 px-xl-2 py-1 mx-2" href="callto:+3662430470"><i class="fa fa-phone"></i> +36 62 430 470</a>                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navbarToggler = document.querySelector('.navbar-toggler');
+        var navbarCollapse = document.querySelector('#navbarResponsive');
+        var body = document.querySelector('body');
+
+        navbarToggler.addEventListener('click', function() {
+            if (navbarCollapse.classList.contains('show')) {
+                body.classList.remove('navbar-open');
+            } else {
+                body.classList.add('navbar-open');
+            }
+        });
+
+        if (window.innerWidth < 992) {
+            document.querySelector('.custom-dropdown-menu').style.display = 'block';
+        }
+    });
+</script>	<!-- WELCOME -->
+	<header id="welcome">
+		<div id="top-slider" class="mb-5">
+
+		  <div id="top-slide-1" class="top-slide">
+			  <div class="">
+				  <div class="row">
+					  <div class="col text-center align-bottom align-text-bottom">
+						  <div style="padding: 20px; background: url('https://ugyfel.c-store.eu/storage/000162/gallery/original/66.jpg'); background-size: 100% auto; background-repeat: no-repeat; background-position: center center; min-height: calc(100vw * 0.56); width: 100%; display: block;">
+			
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  
+		  <div id="top-slide-1" class="top-slide">
+			  <div class="">
+				  <div class="row">
+					  <div class="col text-center align-bottom align-text-bottom">
+						  <div style="padding: 20px; background: url('https://ugyfel.c-store.eu/storage/000162/gallery/original/67.png'); background-size: 100% auto; background-repeat: no-repeat; background-position: center center; min-height: calc(100vw * 0.56); width: 100%; display: block;">
+			
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  </div>
+	</header>
+	<div id="fullbackgroundDark"></div>
+<!-- Products_group -->
+		<section id="products_group" class="section light">
+		<div class="section-head">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<a name="group"></a>
+						<h2 onclick="location.href='/';">Kategóriák</h2>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+	<section id="services" class="section light products_group">
+		<div class="section-content">
+			<div class="container">
+				<div class="row">
+				
+									<div onclick="location.href='/?id=1&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/131.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Frissensültek</label>
+									</div>
+								
+									<div onclick="location.href='/?id=2&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/138.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Húsmentes pizzák</label>
+									</div>
+								
+									<div onclick="location.href='/?id=3&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/133.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Pizzák</label>
+									</div>
+								
+									<div onclick="location.href='/?id=4&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/137.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Saláták</label>
+									</div>
+								
+									<div onclick="location.href='/?id=14&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/153.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Tészták</label>
+									</div>
+								
+									<div onclick="location.href='/?id=5&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/134.jpg'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Leves</label>
+									</div>
+								
+									<div onclick="location.href='/?id=6&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/139.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Köretek</label>
+									</div>
+								
+									<div onclick="location.href='/?id=8&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/151.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Gyerek menü</label>
+									</div>
+								
+									<div onclick="location.href='/?id=9&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/154.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Desszertek</label>
+									</div>
+								
+									<div onclick="location.href='/?id=10&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('/images/nopic.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Hamburgerek</label>
+									</div>
+								
+									<div onclick="location.href='/?id=13&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/152.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Szószok, Öntetek, étel kiegészítők</label>
+									</div>
+								
+									<div onclick="location.href='/?id=7&type=subgroup&#subgroup';" class="mngroup" style="width: 200px; height: 200px; background-image: url('https://ugyfel.c-store.eu/storage/000162/products_group_web/image_large/140.png'); background-position: center; background-repeat: no-repeat;background-size: cover;">
+										<label style="display: table; background-color: var(--main-blue); width: 100%; padding: 3px 0;">Italok</label>
+									</div>
+												</div>
+			</div>
+		</div>
+	</section>
+	<section id="rolunk" class="section mt-5 mb-5">
+        <div class="pattern-divider"></div>
+		<div class="section-head">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2 class="greek-font text-main-blue-dark h1 section-title-text">Rólunk</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pt-2 pb-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 pl-lg-4 company-rolunk-paragraph">
+                        <p>G&ouml;r&ouml;g Pizz&eacute;ria</p>
+
+<p>Alap&iacute;tva 1990-ben</p>
+
+<p><strong>Csal&aacute;di v&aacute;llalkoz&aacute;sk&eacute;nt &uuml;zemelő kertv&aacute;rosi &eacute;tterm&uuml;nkben nem csak pizz&aacute;kat k&eacute;sz&iacute;t&uuml;nk. A g&ouml;r&ouml;g &iacute;zeket is ide var&aacute;zsoljuk s&uuml;ltjeinkben &eacute;s sal&aacute;t&aacute;inkban. Az &eacute;tterem f&ouml;ldszinti r&eacute;sze minden ny&aacute;ron hangulatos terasszal bőv&uuml;l. Az emeleten 40 fő r&eacute;sz&eacute;re k&uuml;l&ouml;nterem &eacute;s hozz&aacute; kapcsol&oacute;d&oacute; terasz v&aacute;rja vend&eacute;geinket.</strong></p>
+
+<p><strong>Sz&iacute;vesen l&aacute;tunk mindenkit, ha egy kis mediterr&aacute;n hangulatra &eacute;s &iacute;zekre v&aacute;gyik.</strong></p>
+
+<p>&Uuml;dv&ouml;zlettel:&nbsp;G&ouml;r&ouml;g Pizz&eacute;ria dolgoz&oacute;i</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<script>
+    const slider = document.querySelector('.slider');
+    let currentIndex = 0;
+
+    function startSlider() {
+        setInterval(() => {
+            if (currentIndex === slider.children.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            slider.style.transition = 'transform 1s ease-in-out';
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 2000); // 2 másodpercig tart minden dia
+    }
+
+    startSlider();
+</script>	<section id="szallitas" class="section light">
+		<div class="section-head">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+					<h2 class="greek-font text-main-blue-dark h1 section-title-text">Szállítás, szállítási feltételek</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 pl-lg-4 company-rolunk-paragraph">
+<p><strong>Nyitvatart&aacute;s:</strong></p>
+
+<p style="text-align:center"><span style="font-size:20px"><strong>Keddtől Vas&aacute;rnapig 12:00 - 22:00</strong></span></p>
+
+<p><strong>Rendel&eacute;seket minden nap 10:30 -t&oacute;l - 21:30-ig vesz&uuml;nk fel!<br />
+Kisz&aacute;ll&iacute;t&aacute;s 11:30 - t&oacute;l</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	<!-- CONTACT -->
+	<section id="contact" class="section light">
+		<div class="section-content">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-8 mb-5 mb-lg-0">
+						<h3>Térkép</h3>
+						<div id="map_frame">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.942866898872!2d20.169298176640414!3d46.25136358057455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474488474a07276f%3A0xd98826b7413a5dd9!2sSzeged%2C%20F%C3%BCrj%20u.%2029%2C%206726!5e0!3m2!1shu!2shu!4v1724320929964!5m2!1shu!2shu" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+						</div>
+					</div>
+					<div class="col-lg-4 pl-lg-5">
+						<!-- Contact info -->
+						<h3>Elérhetőségeink</h3>
+						<ul class="mt-4">
+							<li class="mb-4"><img src="/images/logo.png?1725444043" style="vertical-align:bottom; width: 100%;" /><br /><strong><span style="font-family:Nasalization; line-height: 40px;">Görög Pizza Kft</span></strong></li>
+							<!-- Phone -->
+							<li><i class="fa fa-phone" style="margin-left:1px;"></i>&nbsp;&nbsp;+36 70 280 2822,  +36 62 430 470</li>
+							<!-- E-mail -->
+							<li><i class="fa fa-envelope" style="margin-left:1px;"></i>&nbsp;&nbsp;megrendeles@gorogpizzeria.hu</li>
+							<!-- Website -->
+							<li><a href="http://codemakers.hu" target="_blank"><i class="fa fa-globe-europe" style="margin-left:1px;"></i>&nbsp;&nbsp;https://gorogpizzeria.hu</a></li>
+							<!-- Address -->
+							<li><i class="fa fa-map-marked-alt"></i>&nbsp;&nbsp;6726 Szeged,  Fürj utca 29.</li>
+							<!-- Taxnum -->
+							<li><i class="fa fa-id-card"></i>&nbsp;&nbsp;11397773-2-06</li>
+						</ul>
+
+						<!-- Opening hours -->
+						<h5>Nyitvatartás</h5>
+
+						<span class="openingName">Hétfő: </span><span class="openingTime">Zárva!</span><br /><span class="openingName">Kedd: </span><span class="openingTime">12:00-22:00</span><br /><span class="openingName">Szerda: </span><span class="openingTime">12:00-22:00</span><br /><span class="openingName">Csütörtök: </span><span class="openingTime">12:00-22:00</span><br /><span class="openingName">Péntek: </span><span class="openingTime">12:00-22:00</span><br /><span class="openingName">Szombat: </span><span class="openingTime">12:00-22:00</span><br /><span class="openingName">Vasárnap: </span><span class="openingTime">12:00-22:00</span><br />						<!-- Opening hours -->
+						<h5>Webes rendelések fogadása</h5>
+
+						<span class="openingName">Hétfő: </span><span class="openingTime">Zárva!</span><br /><span class="openingName">Kedd: </span><span class="openingTime">11:00-21:30</span><br /><span class="openingName">Szerda: </span><span class="openingTime">11:00-21:30</span><br /><span class="openingName">Csütörtök: </span><span class="openingTime">11:00-21:30</span><br /><span class="openingName">Péntek: </span><span class="openingTime">11:00-21:30</span><br /><span class="openingName">Szombat: </span><span class="openingTime">11:00-21:30</span><br /><span class="openingName">Vasárnap: </span><span class="openingTime">11:00-21:30</span><br />					</div>
+				</div>
+			</div>
+		</div>
+	</section>	<!-- FOOTER -->
+	<footer>
+		<div class="container pb-4">
+			<div class="row">
+				<div class="col-10 col-md-auto mx-4 text-center text-md-left">
+
+					<!-- About Us -->
+					<h5><span>&#169;</span> Görög Pizza Kft</h5>
+					<p>
+						Igazi görögös ízek, Szeged egyik legrégebbi pizzériájában					</p>
+
+				</div>
+				<div class="col-10 col-md-auto mx-4 text-center text-md-left">
+
+					<!-- Privacy -->
+					<h5>Adatvédelem és szállítási feltételek</h5>
+					<p>
+						<a href="https://gorogpizzeria.hu/ASZF.pdf" target="_blank"><i class="fas fa-file-alt"></i> Adatvédelmi tájékoztató és szállítási feltételek</a><br />
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

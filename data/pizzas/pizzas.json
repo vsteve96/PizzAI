@@ -1,0 +1,38 @@
+[
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "SONKA-KUKORICA",
+    "description": "Paradicsomos alap, kukorica, sonka sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "HÚSHEGY",
+    "description": "Paradicsomos alap, sonka, szalámi, kolbász, bacon, darált hús, hagyma, sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "SONKÁS",
+    "description": "Paradicsomos alap, sonka, sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "SAJTOS",
+    "description": "Paradicsomos alap, sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "JÓLLAK-TÁL",
+    "description": "Steak burgonya, két szelet rántott sajt, 20 dkg Kirugott szakács, 20 dkg Sziló, 20 dkg Szezám tárulj, 15 dkg rántott gomba, 10 dkg rántott hagymakarika, 4 db sült virsli. Tálainkhoz 1,75 l-es Pepsi terméket adunk ajándékba! A rendelés leadásakor a MEGJEGYZÉS rovatba írd be, melyiket kéred az alábbiak közül: Pepsi, Pepsi Max, Mirinda, 7UP. Minden tálhoz egy szósz és egy saláta ajándékba kérhető a FELTÉTEK GOMB alatt található kínálatunkból. Jelöld be, melyiket választod, és válassz hozzá köreteink közül steak burgonyát is. (Több feltét választása esetén is csak egy szószt és egy salátát áll módunkban ingyenesen kiküldeni számodra.)",
+    "price": 9800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "RÁNTOTT HÚS - SONKÁS",
+    "description": "Sajttal, sonkával töltve. Az ár a köretet - steak burgonya - tartalmazza, ami mellé egy szószt vagy egy savanyúságot választhatsz ingyen. (Több feltét választása esetén is csak egyet áll módunkban ingyenesen kiküldeni számodra.)",
+    "price": 3000
+  }
+]

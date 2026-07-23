@@ -1,0 +1,26 @@
+[
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "SONKA-KUKORICA",
+    "description": "Paradicsomos alap, kukorica, sonka sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "HÚSHEGY",
+    "description": "Paradicsomos alap, sonka, szalámi, kolbász, bacon, darált hús, hagyma, sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "SONKÁS",
+    "description": "Paradicsomos alap, sonka, sajt",
+    "price": 1800
+  },
+  {
+    "source_file": "pizzatoronyszeged.html",
+    "name": "SAJTOS",
+    "description": "Paradicsomos alap, sajt",
+    "price": 1800
+  }
+]
