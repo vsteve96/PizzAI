@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "name": "Teszt Pizza Szeged",
+    "city": "Szeged",
+    "sources": [
+      "website",
+      "wolt"
+    ],
+    "status": "candidate"
+  }
+]
