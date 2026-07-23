@@ -1,8 +1,14 @@
+import os
 import pandas as pd
 from utils.models import Pizza
 
 
 def export_pizzas(pizzas, filename):
+
+    os.makedirs(
+        os.path.dirname(filename),
+        exist_ok=True
+    )
 
     data = []
 
