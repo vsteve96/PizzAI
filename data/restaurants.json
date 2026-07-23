@@ -1,10 +1,19 @@
 [
   {
-    "name": "Teszt Pizza Szeged",
+    "name": "PizzaToronySzeged",
     "city": "Szeged",
+    "url": "https://pizzatoronyszeged.hu/",
     "sources": [
-      "website",
-      "wolt"
+      "web_search"
+    ],
+    "status": "candidate"
+  },
+  {
+    "name": "Görög Pizzéria Szeged",
+    "city": "Szeged",
+    "url": "https://gorogpizzeria.hu/",
+    "sources": [
+      "web_search"
     ],
     "status": "candidate"
   }
